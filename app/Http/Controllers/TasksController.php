@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Message;    // 追加
+use App\Task;    // 追加
 
-class MessagesController extends Controller
+class TasksController extends Controller
 {
     // getでmessages/にアクセスされた場合の「一覧表示処理」
     public function index()
@@ -31,7 +31,7 @@ class MessagesController extends Controller
     // postでmessages/にアクセスされた場合の「新規登録処理」
     public function store(Request $request)
     {
-        $task = new Message;
+        $task = new Task;
         $task->content = $request->content;
         $task->save();
 
